@@ -10,15 +10,11 @@ import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
-  if (!isOpen) {
-    return null;
-  }
-
   return (
-    <Wrapper>
+    <Wrapper isOpen={isOpen} onDismiss={onDismiss}>
       <Content>
         <UnstyledButton onClick={onDismiss}>
-          <Icon id="close" color={COLORS.gray[900]} size={24} strokeWidth={2} />
+          <Icon id="close" size={24} strokeWidth={2} />
         </UnstyledButton>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
