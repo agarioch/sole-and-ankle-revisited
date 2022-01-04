@@ -13,9 +13,11 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   return (
     <Wrapper isOpen={isOpen} onDismiss={onDismiss}>
       <Content>
-        <UnstyledButton onClick={onDismiss}>
+        <Close onClick={onDismiss}>
           <Icon id="close" size={24} strokeWidth={2} />
-        </UnstyledButton>
+          <VisuallyHidden>Close menu</VisuallyHidden>
+        </Close>
+        <Spacer />
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -40,7 +42,7 @@ const Wrapper = styled(DialogOverlay)`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: hsla(0deg 0% 0% / 0.2);
+  background-color: hsl(0deg 0% 0% / 0.6);
   display: flex;
   justify-content: flex-end;
 `;
@@ -74,12 +76,23 @@ const NavLink = styled.a`
 `;
 const Footer = styled.footer`
   align-self: flex-start;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px;
+  font-size: ${14/16}rem;
   & > a {
     color: ${COLORS.gray[700]};
-    display: block;
-    font-size: ${14/16}rem;
-    margin-top: 14px;
     text-decoration: none;
   }
 `;
+const Spacer = styled.div`
+  flex: 1;
+`
+const Close = styled(UnstyledButton)`
+  position: absolute;
+  padding: 16px;
+  top: 10px;
+`
 export default MobileMenu;
