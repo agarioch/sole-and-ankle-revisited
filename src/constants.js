@@ -18,7 +18,7 @@ export const WEIGHTS = {
 };
 
 export const QUERIES = {
-  laptopMax: `(max-width: ${1300/16}rem)`,
-  tabletMax: `(max-width: ${950/16}rem)`,
-  phoneMax: `(max-width: ${600/16}rem)`
+  laptopOrSmaller: `(max-width: ${1300/16}rem)`,
+  tabletOrSmaller: `(max-width: ${950/16}rem)`,
+  phoneOrSmaller: `(max-width: ${600/16}rem)`
 }
